@@ -1,0 +1,28 @@
+{
+  "name": "team-alpha-recharge-app",
+  "version": "1.0.0",
+  "description": "Damilola Babalola - @dharmyx - Frontend\r Farinde David - @Youngdavid45",
+  "main": "app.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "dev": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gentlekboy/Team-Alpha-Recharge-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gentlekboy/Team-Alpha-Recharge-App/issues"
+  },
+  "homepage": "https://github.com/Gentlekboy/Team-Alpha-Recharge-App#readme",
+  "dependencies": {
+    "@babel/core": "^7.10.3",
+    "@babel/polyfill": "^7.10.1",
+    "axios": "^0.19.2",
+    "parcel-bundler": "^1.12.4"
+  }
+}

@@ -1,0 +1,447 @@
+@import url("https://fonts.googleapis.com/css2?family=Questrial&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Arvo&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  width: 100%;
+  background-color: #ffffff;
+  font-family: "Questrial", sans-serif;
+}
+header {
+  background-image: url(images/bg2.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.head-container {
+  padding: 30px 0;
+  background: rgb(0, 0, 0, 0.3);
+}
+div.logo-mobile a {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.3rem;
+  text-decoration: none;
+  color: rgb(242, 242, 249);
+  cursor: pointer;
+  margin: 1rem;
+}
+div.logo-desktop > h3.logo a {
+  display: none;
+}
+
+p.nav2 {
+  display: none;
+  margin: 15% 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+a.nav1 {
+  text-decoration: none;
+  color: lightblue;
+}
+
+.menu-wrap,
+.toggler,
+.hamburger,
+.menu {
+  display: block;
+}
+
+.menu-wrap {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.menu-wrap .toggler {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  opacity: 0;
+}
+
+.menu-wrap .hamburger {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  padding: 1rem;
+  background: rgb(4, 42, 79, 0.01);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Hamburger Line */
+
+.menu-wrap .hamburger > div {
+  position: relative;
+  width: 100%;
+  height: 2px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease;
+}
+
+.menu-wrap .hamburger > div:before,
+.menu-wrap .hamburger > div:after {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  top: -5px;
+  width: 100%;
+  height: 2px;
+  background: inherit;
+}
+
+.menu-wrap .hamburger > div:after {
+  top: 5px;
+}
+
+.menu-wrap .toggler:checked + .hamburger > div {
+  transform: rotate(135deg);
+}
+
+.menu-wrap .toggler:checked + .hamburger > div:before,
+.menu-wrap .toggler:checked + .hamburger > div:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+.menu-wrap .toggler:checked:hover + .hamburger > div {
+  transform: rotate(225deg);
+}
+
+.menu-wrap .toggler:checked ~ .menu {
+  visibility: visible;
+}
+
+.menu-wrap .toggler:checked ~ .menu > div {
+  transform: scale(1);
+}
+
+.menu-wrap .toggler:checked ~ .menu > div > div {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+
+.menu-wrap .menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+
+.menu-wrap .menu > div {
+  background: rgb(14, 17, 24, 0.85);
+  border-radius: 0 0 10px 10px;
+  width: 60vw;
+  height: 60vh;
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  transform: scale(2);
+  transition: all 800ms ease;
+  animation: fadeInDown 5s 1;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.menu-wrap .menu > div > div {
+  text-align: center;
+  max-width: 50vw;
+  max-height: 100vh;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.menu-wrap .menu > div > div > ul > li {
+  list-style: none;
+  color: #fff;
+  font-size: 1rem;
+  padding: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.menu-wrap .menu > div > div > ul > li > a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.sub-head {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  color: white;
+  margin-top: -20px;
+}
+p.sub-head-1 {
+  font-size: 2rem;
+  font-family: "Arvo", sans-serif;
+  letter-spacing: 0.6px;
+  border-bottom: 1px solid #00ffff;
+  color: white;
+  background-color: rgba(51, 50, 56, 0.15);
+  padding: 5px;
+  text-align: center;
+}
+p.sub-head-2 {
+  font-size: 1rem;
+  font-style: italic;
+  font-family: "Questrial", sans-serif;
+  letter-spacing: 0.6px;
+  color: white;
+  background-color: rgba(51, 50, 56, 0.6);
+  padding: 10px;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 50px 20px;
+}
+label {
+  font-size: 1rem;
+  font-weight: bold;
+}
+label.operator {
+  font-weight: 100;
+}
+p.text-2 {
+  font-size: 1rem;
+  font-weight: bold;
+  margin: 10px auto;
+}
+input[type="tel"],
+input[type="number"] {
+  width: 100%;
+  font-size: 0.8rem;
+  background-color: rgb(239, 238, 255);
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  outline: aliceblue;
+  margin: 20px auto;
+}
+input[type="radio"] {
+  margin: 5px 0 20px 10px;
+  cursor: pointer;
+}
+input#mtn {
+  margin-left: 0;
+}
+button {
+  width: auto;
+  font-size: 1rem;
+  font-weight: bold;
+  color: white;
+  padding: 13px 20px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 20px;
+  background-color: rgb(64, 202, 64);
+  cursor: pointer;
+  outline: none;
+}
+button:hover {
+  background-color: rgb(202, 108, 64);
+  cursor: pointer;
+}
+footer {
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 0.8rem;
+  color: white;
+  padding: 30px;
+  background: rgb(52, 49, 93);
+}
+footer a {
+  text-decoration: none;
+  color: gray;
+  cursor: pointer;
+}
+
+/* Idris added this style */
+.alert {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  z-index: 9999;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  text-align: center;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 1rem 10rem;
+  -webkit-box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+  box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
+}
+
+/* Idris added this style */
+.alert--success {
+  background-color: #00ff00;
+}
+/* Idris added this style */
+.alert--error {
+  background-color: #eb4d4b;
+}
+
+@media screen and (min-width: 359px) {
+  section {
+    padding: 60px 30px;
+  }
+}
+
+@media screen and (min-width: 374px) {
+  section {
+    padding: 60px 35px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    background-image: url(images/bg2.jpeg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .head-container {
+    padding: 10px 0;
+    background: rgb(0, 0, 0, 0.3);
+  }
+  .sub-head {
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    color: white;
+  }
+  .menu-wrap,
+  .toggler,
+  .hamburger,
+  .menu {
+    display: none;
+  }
+  nav.desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-self: center;
+    width: auto;
+  }
+
+  div.logo-mobile a {
+    display: none;
+  }
+
+  div.logo-desktop > h3.logo a {
+    display: block;
+    width: fit-content;
+    font-size: 1.5rem;
+    text-decoration: none;
+    background-color: rgb(52, 49, 93, 0.4);
+    color: rgb(242, 242, 249);
+    cursor: pointer;
+    padding: 10px;
+  }
+  p.nav2 {
+    display: block;
+    width: fit-content;
+    padding: 0 5px;
+    margin: 10px;
+    font-size: 1rem;
+    justify-content: center;
+    align-self: center;
+  }
+  .nav2 a {
+    text-decoration: none;
+    color: rgb(242, 242, 249);
+  }
+  p.sub-head-1 {
+    background-color: rgb(80, 80, 80, 0.2);
+    padding: 20px 0;
+    font-size: 2.8rem;
+  }
+  p.sub-head-2 {
+    background-color: rgba(32, 13, 13, 0.3);
+    font-size: 1.2rem;
+    padding: 20px;
+  }
+  section {
+    padding: 50px 100px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas: "x y";
+    column-gap: 5vw;
+  }
+  form {
+    grid-area: x;
+  }
+  div.illus {
+    grid-area: y;
+    background-image: url(images/undraw_online_payments_luau.png);
+    background-position: center center;
+    background-size: 450px;
+    background-repeat: no-repeat;
+  }
+  footer {
+    width: auto;
+    padding: 30px 0;
+    background: rgb(52, 49, 93);
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  p.sub-head-2 {
+    background-color: rgb(80, 80, 80, 0.1);
+  }
+}
